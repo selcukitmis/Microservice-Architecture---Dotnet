@@ -1,0 +1,1 @@
+docker run mongo --> docker run -d --rm --name mongo -p 27017:27017 -v mondodbdata:/data/db mongo
