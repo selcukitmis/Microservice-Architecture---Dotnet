@@ -1,1 +1,7 @@
 docker run mongo --> docker run -d --rm --name mongo -p 27017:27017 -v mondodbdata:/data/db mongo
+
+common paketleme --> dotnet pack -o ..\..\..\packages\
+
+lokal nuget yapma --> dotnet nuget add source D:\Projects\Microservices\packages -n PlayEconomy
+
+paketli dosyayı kullanma --> dotnet add package Play.Common
