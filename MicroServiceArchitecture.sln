@@ -28,6 +28,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play.Common", "Play.Common\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play.Inventory.Service", "Play.Inventory\src\Play.Inventory.Service\Play.Inventory.Service.csproj", "{7F7A0A23-6C92-40C0-99A6-1C1B5471A7AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE728487-43A0-4235-9B0E-D0AD1F800E00}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vscode", ".vscode", "{5EB56E7A-E9D8-4089-BED8-8207AEE33733}"
+	ProjectSection(SolutionItems) = preProject
+		Play.Catalog\.vscode\launch.json = Play.Catalog\.vscode\launch.json
+		Play.Catalog\.vscode\tasks.json = Play.Catalog\.vscode\tasks.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vscode", ".vscode", "{76DAD82A-E493-46E2-B59F-BA30D3AB79DE}"
+	ProjectSection(SolutionItems) = preProject
+		Play.Common\.vscode\tasks.json = Play.Common\.vscode\tasks.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vscode", ".vscode", "{962C3BC9-ECDF-442E-B44B-07DA2182E7F5}"
+	ProjectSection(SolutionItems) = preProject
+		Play.Inventory\.vscode\launch.json = Play.Inventory\.vscode\launch.json
+		Play.Inventory\.vscode\tasks.json = Play.Inventory\.vscode\tasks.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +84,9 @@ Global
 		{90949029-0963-4411-8CCE-1004D23B486A} = {9E1B360A-E9FF-4B8C-9B13-E0BFBF092138}
 		{682A418C-7D2B-4D23-AC16-8AA49AF8BF1C} = {B11E06B6-2322-4F14-88FA-C6E0A0399CC5}
 		{7F7A0A23-6C92-40C0-99A6-1C1B5471A7AD} = {4D96CE82-B042-41FA-9BA2-A24AD2EF18FC}
+		{5EB56E7A-E9D8-4089-BED8-8207AEE33733} = {22DB1FBA-85C9-49D8-8F6E-A83F25FB90E6}
+		{76DAD82A-E493-46E2-B59F-BA30D3AB79DE} = {692A9CB5-5E48-4AEF-AFF2-19F4372747CB}
+		{962C3BC9-ECDF-442E-B44B-07DA2182E7F5} = {65A4D926-F32B-45BF-B911-E48AA3EF6532}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13CD02E3-B9FE-49B1-A18A-8558BFF6AC03}
