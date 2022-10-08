@@ -6,7 +6,7 @@ using Play.Inventory.Service.Entities;
 
 namespace Play.Inventory.Service.Consumers
 {
-    public class CatalogItemUpdatedConsumer : IConsumer<CatalogItemCreated>
+    public class CatalogItemUpdatedConsumer : IConsumer<CatalogItemUpdated>
     {
         private readonly IRepository<CatalogItem> repository;
 
@@ -15,7 +15,7 @@ namespace Play.Inventory.Service.Consumers
             this.repository = repository;
         }
 
-        public async Task Consume(ConsumeContext<CatalogItemCreated> context)
+        public async Task Consume(ConsumeContext<CatalogItemUpdated> context)
         {
             var message = context.Message;
             var item = await repository.GetAsync(message.ItemId);
@@ -35,8 +35,6 @@ namespace Play.Inventory.Service.Consumers
                 item.Description = message.Description;
                 await repository.UpdateAsync(item);
             }
-
-
         }
     }
 }

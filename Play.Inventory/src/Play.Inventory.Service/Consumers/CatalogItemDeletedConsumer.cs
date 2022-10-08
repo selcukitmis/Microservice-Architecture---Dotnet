@@ -6,7 +6,7 @@ using Play.Inventory.Service.Entities;
 
 namespace Play.Inventory.Service.Consumers
 {
-    public class CatalogItemDeletedConsumer : IConsumer<CatalogItemCreated>
+    public class CatalogItemDeletedConsumer : IConsumer<CatalogItemDeleted>
     {
         private readonly IRepository<CatalogItem> repository;
 
@@ -15,7 +15,7 @@ namespace Play.Inventory.Service.Consumers
             this.repository = repository;
         }
 
-        public async Task Consume(ConsumeContext<CatalogItemCreated> context)
+        public async Task Consume(ConsumeContext<CatalogItemDeleted> context)
         {
             var message = context.Message;
             var item = await repository.GetAsync(message.ItemId);

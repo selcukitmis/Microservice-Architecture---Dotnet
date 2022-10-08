@@ -16,12 +16,12 @@ namespace Play.Inventory.Service.Controllers
     {
 
         private readonly IRepository<InventoryItem> repository;
-        private readonly CatalogClient _catalogClient;
+        private readonly IRepository<CatalogItem> catalogRepository;
 
-        public ItemsController(IRepository<InventoryItem> repository, CatalogClient catalogClient)
+        public ItemsController(IRepository<InventoryItem> repository, IRepository<CatalogItem> catalogRepository)
         {
             this.repository = repository;
-            _catalogClient = catalogClient;
+            this.catalogRepository = catalogRepository;
         }
 
         [HttpGet]
@@ -32,12 +32,14 @@ namespace Play.Inventory.Service.Controllers
                 return BadRequest();
             }
 
-            var catalogItems = await _catalogClient.GetCatalogItemAsync();
+            
             var inventoryItemEntities = await repository.GetAllAsync(item => item.UserId == userId);
+            var itemIds = inventoryItemEntities.Select(entity => entity.CatalogItemId).ToList();
+            var catalogItemEntities = await catalogRepository.GetAllAsync(item => itemIds.Contains(item.Id));
 
             var inventoryItemDtos = inventoryItemEntities.Select(inventoryItemEntity =>
             {
-                var catalogItem = catalogItems.Single(catalogItem => catalogItem.Id == inventoryItemEntity.CatalogItemId);
+                var catalogItem = catalogItemEntities.Single(catalogItem => catalogItem.Id == inventoryItemEntity.CatalogItemId);
                 return inventoryItemEntity.AsDto(catalogItem.Name, catalogItem.Description);
             });
 
